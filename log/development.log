@@ -1,0 +1,142 @@
+  [4;36;1mSQL (0.000329)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000194)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (0.002629)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.002899)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.000598)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000422)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20081017005157)
+  [4;36;1mSQL (0.002445)[0m   [0;1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255)) [0m
+  [4;35;1mSQL (0.001825)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20081017005157')[0m
+Migrating to CreateFans (20081017005159)
+  [4;36;1mSQL (0.002948)[0m   [0;1mCREATE TABLE "fans_users" ("fan_id" integer, "fav_id" integer) [0m
+  [4;35;1mSQL (0.002335)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20081017005159')[0m
+  [4;36;1mSQL (0.000382)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000234)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000300)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000052)[0m   [0mPRAGMA index_list("fans_users")[0m
+  [4;36;1mSQL (0.000050)[0m   [0;1mPRAGMA index_list("users")[0m
+  [4;36;1mUser Create (0.000624)[0m   [0;1mINSERT INTO "users" ("name") VALUES('Ryan')[0m
+  [4;35;1mUser Create (0.000497)[0m   [0mINSERT INTO "users" ("name") VALUES('Charlie')[0m
+  [4;36;1mUser Load (0.000398)[0m   [0;1mSELECT * FROM "users" LIMIT 1[0m
+  [4;35;1mUser Load (0.000348)[0m   [0mSELECT * FROM "users" LIMIT 1[0m
+  [4;36;1mUser Load (0.000392)[0m   [0;1mSELECT * FROM "users" LIMIT 1[0m
+  [4;35;1mUser Load (0.000228)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;36;1mSQL (0.000511)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000222)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000199)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000187)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateFans (20081017005159)
+  [4;36;1mSQL (0.000000)[0m   [0;1mSQLite3::SQLException: no such table: fans: DROP TABLE "fans"[0m
+  [4;36;1mSQL (0.000576)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000201)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000197)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000226)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateFans (20081017005159)
+  [4;36;1mSQL (0.000000)[0m   [0;1mSQLite3::SQLException: no such table: fans_user: DROP TABLE "fans_user"[0m
+  [4;36;1mSQL (0.000467)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000191)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000205)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000179)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateFans (20081017005159)
+  [4;36;1mSQL (0.002739)[0m   [0;1mDROP TABLE "fans_users"[0m
+  [4;35;1mSQL (0.002655)[0m   [0mDELETE FROM schema_migrations WHERE version = '20081017005159'[0m
+  [4;36;1mSQL (0.000218)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.000399)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.000235)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.000281)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.000066)[0m   [0;1mPRAGMA index_list("users")[0m
+  [4;36;1mSQL (0.000457)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000160)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000166)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000230)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20081017005157)
+  [4;36;1mSQL (0.003029)[0m   [0;1mDROP TABLE "users"[0m
+  [4;35;1mSQL (0.002516)[0m   [0mDELETE FROM schema_migrations WHERE version = '20081017005157'[0m
+  [4;36;1mSQL (0.000209)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.000281)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.000135)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.000238)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.000387)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000113)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20081017005157)
+  [4;36;1mSQL (0.000109)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.003435)[0m   [0mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255)) [0m
+  [4;36;1mSQL (0.002261)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20081017005157')[0m
+Migrating to CreateFans (20081017005159)
+  [4;35;1mSQL (0.001940)[0m   [0mCREATE TABLE "fans" ("fan_id" integer, "fav_id" integer) [0m
+  [4;36;1mSQL (0.003148)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20081017005159')[0m
+  [4;35;1mSQL (0.000433)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.000272)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.000288)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.000063)[0m   [0;1mPRAGMA index_list("fans")[0m
+  [4;35;1mSQL (0.000038)[0m   [0mPRAGMA index_list("users")[0m
+  [4;36;1mUser Create (0.000387)[0m   [0;1mINSERT INTO "users" ("name") VALUES('Ryan')[0m
+  [4;35;1mUser Create (0.000468)[0m   [0mINSERT INTO "users" ("name") VALUES('Charlie')[0m
+  [4;36;1mUser Create (0.000437)[0m   [0;1mINSERT INTO "users" ("name") VALUES('Ryan')[0m
+  [4;35;1mUser Create (0.000449)[0m   [0mINSERT INTO "users" ("name") VALUES('Ryan')[0m
+  [4;36;1mUser Load (0.000392)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;35;1mSQL (0.000353)[0m   [0mINSERT INTO "fans" ("fan_id", "fav_id") VALUES (2, 4)[0m
+  [4;36;1mUser Load (0.000360)[0m   [0;1mSELECT * FROM "users" INNER JOIN "fans" ON "users".id = "fans".fan_id WHERE ("fans".fav_id = 4 ) [0m
+  [4;35;1mUser Load (0.000361)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) [0m
+  [4;36;1mUser Load (0.000354)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 4) [0m
+  [4;35;1mUser Load (0.000321)[0m   [0mSELECT * FROM "users" INNER JOIN "fans" ON "users".id = "fans".fan_id WHERE ("fans".fav_id = 4 ) [0m
+  [4;36;1mUser Load (0.000471)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;35;1mUser Load (0.000361)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;36;1mUser Load (0.000349)[0m   [0;1mSELECT * FROM "users" INNER JOIN "fans" ON "users".id = "fans".fav_id WHERE ("fans".fan_id = 2 ) [0m
