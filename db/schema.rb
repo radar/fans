@@ -9,11 +9,20 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20081017005159) do
+ActiveRecord::Schema.define(:version => 20081020110639) do
 
   create_table "fans", :id => false, :force => true do |t|
     t.integer "fan_id"
     t.integer "fav_id"
+  end
+
+  create_table "groups", :force => true do |t|
+    t.string "name"
+  end
+
+  create_table "memberships", :id => false, :force => true do |t|
+    t.integer "user_id"
+    t.integer "group_id"
   end
 
   create_table "users", :force => true do |t|

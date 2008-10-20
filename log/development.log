@@ -140,3 +140,39 @@ Migrating to CreateFans (20081017005159)
   [4;36;1mUser Load (0.000471)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
   [4;35;1mUser Load (0.000361)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
   [4;36;1mUser Load (0.000349)[0m   [0;1mSELECT * FROM "users" INNER JOIN "fans" ON "users".id = "fans".fav_id WHERE ("fans".fan_id = 2 ) [0m
+  [4;36;1mGroup Load (0.000000)[0m   [0;1mSQLite3::SQLException: no such table: groups: SELECT * FROM "groups" LIMIT 1[0m
+  [4;36;1mSQL (0.000484)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000371)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20081017005157)
+Migrating to CreateFans (20081017005159)
+Migrating to AddGroups (20081020110639)
+  [4;36;1mSQL (0.000154)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.003213)[0m   [0mCREATE TABLE "groups" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255)) [0m
+  [4;36;1mSQL (0.002427)[0m   [0;1mCREATE TABLE "memberships" ("user_id" integer, "group_id" integer) [0m
+  [4;35;1mSQL (0.002882)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20081020110639')[0m
+  [4;36;1mSQL (0.000354)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000184)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000273)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000047)[0m   [0mPRAGMA index_list("fans")[0m
+  [4;36;1mSQL (0.000050)[0m   [0;1mPRAGMA index_list("groups")[0m
+  [4;35;1mSQL (0.000039)[0m   [0mPRAGMA index_list("memberships")[0m
+  [4;36;1mSQL (0.000039)[0m   [0;1mPRAGMA index_list("users")[0m
+  [4;36;1mGroup Create (0.000583)[0m   [0;1mINSERT INTO "groups" ("name") VALUES('Group')[0m
+  [4;35;1mGroup Load (0.000432)[0m   [0mSELECT * FROM "groups" LIMIT 1[0m
+  [4;36;1mGroup Load (0.000434)[0m   [0;1mSELECT * FROM "groups" LIMIT 1[0m
+  [4;35;1mGroup Load (0.000295)[0m   [0mSELECT * FROM "groups" LIMIT 1[0m
+  [4;36;1mUser Load (0.000330)[0m   [0;1mSELECT * FROM "users" LIMIT 1[0m
+  [4;35;1mMembership Create (0.000569)[0m   [0mINSERT INTO "memberships" ("group_id", "user_id") VALUES(1, 1)[0m
+  [4;36;1mUser Load (0.000469)[0m   [0;1mSELECT "users".* FROM "users" INNER JOIN memberships ON users.id = memberships.user_id WHERE (("memberships".group_id = 1)) [0m
+  [4;35;1mUser Load (0.000379)[0m   [0mSELECT * FROM "users" LIMIT 1[0m
+  [4;36;1mUser Load (0.000355)[0m   [0;1mSELECT * FROM "users" LIMIT 1[0m
+  [4;35;1mGroup Load (0.000295)[0m   [0mSELECT "groups".* FROM "groups" INNER JOIN memberships ON groups.id = memberships.group_id WHERE (("memberships".user_id = 1)) [0m
